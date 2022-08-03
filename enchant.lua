@@ -1,6 +1,6 @@
 local monitor = peripheral.wrap("top")
 term.redirect(monitor)
-
+local title ="Super Enchanter v0.14.1 "
 local width, height = term.getSize()
 local keepOn = true;
 local quarkRunes = { ["0"]="{id:\"quark:white_rune\",Count:1b}",
@@ -52,7 +52,7 @@ end
 -- Create title bar
 chBgCol(colors.gray)
 paintutils.drawLine(1,1,width,1)
-printText(1,1,"Super Enchanter v0.14 ",colors.gray,colors.lightBlue)
+printText(1,1,title,colors.gray,colors.lightBlue)
 printText(width-11, 3,string.char(169).." Copyright",colors.white,colors.lightGray)
 printText(width-12,4,"DrElec, 2022",colors.white,colors.lightGray) 
 --Create buttons
@@ -70,7 +70,7 @@ local function close(bt)
     term.clear()
     shell.run("cd /");
     fs.delete("enchant.lua")
-    shell.run("wget https://5512-178-172-130-108.eu.ngrok.io/enchant.lua")
+    shell.run("wget https://raw.githubusercontent.com/Dr-Elec/CC-hacks/main/enchant.lua")
     os.reboot()
 end
 
@@ -152,9 +152,6 @@ while keepOn do
                 buttons[i].fn(buttons[i])
             end
         end
-    end 
-    if redstone.getInput("left") then
-        
     end  
 end
 
