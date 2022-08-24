@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define DEBUG1
+#define DEBUG
 #ifdef DEBUG
 #define deb(x,y) cout<<x<<y<<endl;
 #define Fpos cout<<"--"<<fin.tellg()<<endl;
@@ -218,14 +218,14 @@ int main()
     fin.seekg(2,ios_base::cur); //skip bcPlanes
 
     uint16_t bitPerPixel = readUint16();
-    //cout<<"Bits per pixel: "<<bitPerPixel<<endl;
-    if(bitPerPixel == 0 ){
+    deb("bitPerPixel: ", bitPerPixel)
+    if(bitPerPixel == 0 ) {
         cout<<"File not support(bitPerPixel)!\n";
         system("pause");
         return 0;
     }
     uint32_t compression = readUint32();
-    //cout<<"Compression: "<<compression<<endl;
+    deb("Compression: ", compression)
     if(compression != 0 ){
         cout<<"File not support!(compression != 0)\n";
         system("pause");
@@ -241,7 +241,7 @@ int main()
         system("pause");
         return 0;
     }
-    //cout<<"Colors used: "<<colAmount<<endl;
+    deb("Colors used: ",colAmount)
     printUint32("biClrImportant: ")
 
     //exploring color table
