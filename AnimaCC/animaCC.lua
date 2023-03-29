@@ -1,11 +1,12 @@
-local args ={...}
-local path = "/anime/"
-local filelist = fs.list(path)
-local mons = {"top"}
-local curFile = 1
-local file = fs.open(path .. filelist[1], "rb")
 
+local path = "/anima/"
+local mons = {"top"}
+
+local args = {...}
 local mon
+local filelist = fs.list(path)
+local curFile = 1
+local file = fs.open(path .. filelist[1],"rb")
 
 local function read16() 
     local val1 = file.read()
@@ -61,7 +62,7 @@ end
 
 
 while true do 
-	os.startTimer(3)
+	os.startTimer(0.05)
     file = fs.open(path .. filelist[curFile],"rb")
     
     curFile = curFile + 1

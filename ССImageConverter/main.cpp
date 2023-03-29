@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 #define DEBUG
-#ifdef DEBUG
+#ifndef DEBUG
 #define deb(x,y) cout<<x<<y<<endl;
 #define Fpos cout<<"--"<<fin.tellg()<<endl;
 #define printUint32(x) cout<<x<<readUint32()<<endl;
@@ -236,8 +236,8 @@ int main()
     printUint32("biYPelsPerMeter: ")
     uint32_t colAmount = readUint32();
     fout.write((char *)&colAmount, 2);
-    if(colAmount != 16 ){
-        cout<<"File not support!(colAmount != 16)\n";
+    if(colAmount > 16 ){
+        cout<<"File not support!(colAmount > 16)\n";
         system("pause");
         return 0;
     }
